@@ -22,36 +22,50 @@ except Exception as e:
 # FUNCIONES PRINCIPALES
 # ======================================================
 
+def crear_constraint_unico(label, propiedad):
+    """
+    Crea un constraint de unicidad en la propiedad indicada (si no existe).
+    Evita duplicados al hacer MERGE.
+    """
+    query = f"CREATE CONSTRAINT IF NOT EXISTS FOR (n:{label}) REQUIRE n.{propiedad} IS UNIQUE"
+    with driver.session() as session:
+        session.run(query)
+    print(f"🧩 Constraint de unicidad asegurado: ({label}.{propiedad})")
+
+
 def crear_nodo(tx, label, propiedades):
     """
-    Crea o actualiza un nodo (MERGE) con las propiedades dadas.
+    Crea un nodo (MERGE) usando solo su propiedad ID.
     """
     if not propiedades:
         return
-    props = ", ".join([f"{k}: ${k}" for k in propiedades.keys()])
-    query = f"MERGE (n:{label} {{ {props} }})"
+    clave_id = list(propiedades.keys())[0]
+    query = f"MERGE (n:{label} {{{clave_id}: ${clave_id}}})"
     tx.run(query, **propiedades)
 
 
 def insertar_varios_nodos(label, lista_nodos):
     """
-    Inserta múltiples nodos en una colección (usando MERGE).
+    Inserta múltiples nodos (usando MERGE) y asegura constraints únicos.
     """
     if not lista_nodos:
         print(f"[ADVERTENCIA] No hay nodos para insertar en '{label}'.")
         return
 
+    propiedad_id = list(lista_nodos[0].keys())[0]
+    crear_constraint_unico(label, propiedad_id)
+
     with driver.session() as session:
         for nodo in lista_nodos:
             session.execute_write(crear_nodo, label, nodo)
-    print(f"✅ Se insertaron {len(lista_nodos)} nodos en '{label}'.")
+    print(f"✅ Se insertaron {len(lista_nodos)} nodos en '{label}' (solo IDs).")
 
 
 def crear_relacion(tx, label_origen, prop_origen, valor_origen,
                    label_destino, prop_destino, valor_destino,
                    tipo_relacion):
     """
-    Crea una relación dirigida entre dos nodos, si ambos existen.
+    Crea una relación dirigida entre dos nodos (si ambos existen).
     """
     query = (
         f"MATCH (a:{label_origen} {{{prop_origen}: $valor_origen}}), "
@@ -64,8 +78,6 @@ def crear_relacion(tx, label_origen, prop_origen, valor_origen,
 def insertar_varias_relaciones(lista_relaciones):
     """
     Inserta múltiples relaciones entre nodos.
-    Espera una lista de diccionarios con las claves:
-    label_origen, prop_origen, valor_origen, label_destino, prop_destino, valor_destino, tipo
     """
     if not lista_relaciones:
         print("[ADVERTENCIA] Lista vacía: no se insertaron relaciones.")
@@ -82,44 +94,43 @@ def insertar_varias_relaciones(lista_relaciones):
     print(f"✅ Se insertaron {len(lista_relaciones)} relaciones.")
 
 
+# ======================================================
+# FUNCIONES DE LIMPIEZA Y GESTIÓN
+# ======================================================
+
 def limpiar_base():
     """
-    Elimina todos los nodos y relaciones del grafo (⚠️ cuidado con usar en producción).
+    Elimina todos los nodos y relaciones del grafo.
+    ⚠️ Usar solo en desarrollo o para reiniciar la base.
     """
     with driver.session() as session:
         session.run("MATCH (n) DETACH DELETE n")
     print("🧹 Base de datos Neo4j limpiada con éxito.")
 
 
-def probar_conexion():
+def borrar_todo_de_tipo(label):
     """
-    Verifica si la conexión con Neo4j es exitosa.
+    Elimina todos los nodos y relaciones de un tipo específico.
+    Ejemplo: borrar_todo_de_tipo('Usuario')
     """
-    try:
-        with driver.session() as session:
-            result = session.run("RETURN 1 AS ok")
-            if result.single()["ok"] == 1:
-                print("✅ Conexión a Neo4j exitosa.")
-                return True
-    except Exception as e:
-        print("❌ Error al conectar con Neo4j:", e)
-        return False
+    with driver.session() as session:
+        session.run(f"MATCH (n:{label}) DETACH DELETE n")
+    print(f"🗑️ Todos los nodos del tipo '{label}' fueron eliminados.")
 
 
 def cerrar_conexion():
     """
-    Cierra el driver de Neo4j.
+    Cierra la conexión con Neo4j de forma segura.
+    Usar al finalizar el programa o notebook para liberar recursos.
     """
     if driver:
         driver.close()
         print("🔒 Conexión con Neo4j cerrada correctamente.")
 
 
-
 def mostrar_relaciones():
     """
-    Muestra todas las relaciones sociales (entre usuarios)
-    y las relaciones de visitas (usuario → destino).
+    Muestra todas las relaciones sociales y de visitas.
     """
     if not driver:
         print("❌ No hay conexión activa con Neo4j.")
@@ -136,7 +147,6 @@ def mostrar_relaciones():
             if not encontrados:
                 print("  (sin resultados)")
 
-    # Relaciones sociales (Usuario ↔ Usuario)
     query_sociales = """
     MATCH (u1:Usuario)-[r]->(u2:Usuario)
     RETURN u1.usuario_id AS origen, type(r) AS relacion, u2.usuario_id AS destino
@@ -144,7 +154,6 @@ def mostrar_relaciones():
     """
     ejecutar_y_mostrar(query_sociales, "Relaciones sociales (Usuario ↔ Usuario)")
 
-    # Relaciones de visitas (Usuario → Destino)
     query_visitas = """
     MATCH (u:Usuario)-[r:VISITO]->(d:Destino)
     RETURN u.usuario_id AS origen, type(r) AS relacion, d.destino_id AS destino
