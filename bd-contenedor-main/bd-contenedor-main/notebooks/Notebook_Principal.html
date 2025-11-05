@@ -7760,7 +7760,7 @@ El objetivo de este trabajo es diseñar un modelo de distintos tipos de bases de
 <div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># --- Importaciones iniciales ---</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># --- Importaciones iniciales </span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">importlib</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">".."</span><span class="p">,</span> <span class="s2">"scripts"</span><span class="p">)))</span>
 
@@ -7811,21 +7811,21 @@ El objetivo de este trabajo es diseñar un modelo de distintos tipos de bases de
 <div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># --- Limpiar colecciones antes de volver a insertar, las reinicia ---</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># --- Limpiar colecciones antes de volver a insertar, las reinicia</span>
 <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">usuarios</span><span class="o">.</span><span class="n">delete_many</span><span class="p">({})</span>
 <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">destinos</span><span class="o">.</span><span class="n">delete_many</span><span class="p">({})</span>
 <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">hoteles</span><span class="o">.</span><span class="n">delete_many</span><span class="p">({})</span>
 <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">actividades</span><span class="o">.</span><span class="n">delete_many</span><span class="p">({})</span>
 <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">reservas</span><span class="o">.</span><span class="n">delete_many</span><span class="p">({})</span>
 
-<span class="c1"># --- Cargar datos desde JSON ---</span>
+<span class="c1"># --- Cargar datos desde JSON</span>
 <span class="n">usuarios</span> <span class="o">=</span> <span class="n">funciones_comunes</span><span class="o">.</span><span class="n">cargar_json</span><span class="p">(</span><span class="n">config_paths</span><span class="o">.</span><span class="n">USUARIOS_JSON</span><span class="p">)</span>
 <span class="n">destinos</span> <span class="o">=</span> <span class="n">funciones_comunes</span><span class="o">.</span><span class="n">cargar_json</span><span class="p">(</span><span class="n">config_paths</span><span class="o">.</span><span class="n">DESTINOS_JSON</span><span class="p">)</span>
 <span class="n">hoteles</span> <span class="o">=</span> <span class="n">funciones_comunes</span><span class="o">.</span><span class="n">cargar_json</span><span class="p">(</span><span class="n">config_paths</span><span class="o">.</span><span class="n">HOTELES_JSON</span><span class="p">)</span>
 <span class="n">actividades</span> <span class="o">=</span> <span class="n">funciones_comunes</span><span class="o">.</span><span class="n">cargar_json</span><span class="p">(</span><span class="n">config_paths</span><span class="o">.</span><span class="n">ACTIVIDADES_JSON</span><span class="p">)</span>
 <span class="n">reservas</span> <span class="o">=</span> <span class="n">funciones_comunes</span><span class="o">.</span><span class="n">cargar_json</span><span class="p">(</span><span class="n">config_paths</span><span class="o">.</span><span class="n">RESERVAS_JSON</span><span class="p">)</span>
 
-<span class="c1"># --- Insertar en MongoDB ---</span>
+<span class="c1"># --- Insertar en MongoDB</span>
 <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">insertar_varios_documentos</span><span class="p">(</span><span class="s2">"usuarios"</span><span class="p">,</span> <span class="n">usuarios</span><span class="p">)</span>
 <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">insertar_varios_documentos</span><span class="p">(</span><span class="s2">"destinos"</span><span class="p">,</span> <span class="n">destinos</span><span class="p">)</span>
 <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">insertar_varios_documentos</span><span class="p">(</span><span class="s2">"hoteles"</span><span class="p">,</span> <span class="n">hoteles</span><span class="p">)</span>
@@ -7844,7 +7844,7 @@ El objetivo de este trabajo es diseñar un modelo de distintos tipos de bases de
 <div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># --- Verificar que se insertaron correctamente ---</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># --- Verificar que se insertaron correctamente</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">🧍 Usuarios:"</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">usuarios</span><span class="o">.</span><span class="n">find</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
@@ -7878,41 +7878,41 @@ El objetivo de este trabajo es diseñar un modelo de distintos tipos de bases de
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
 🧍 Usuarios:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb3'), 'usuario_id': 1, 'nombre': 'María Pérez', 'email': 'maria.perez@example.com', 'telefono': '+54 11 4567 1234'}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb4'), 'usuario_id': 2, 'nombre': 'Juan López', 'email': 'juan.lopez@example.com', 'telefono': '+54 221 334 5566'}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb5'), 'usuario_id': 3, 'nombre': 'Carla Gómez', 'email': 'carla.gomez@example.com', 'telefono': '+54 261 789 2233'}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb6'), 'usuario_id': 4, 'nombre': 'Luis Fernández', 'email': 'luis.fernandez@example.com', 'telefono': '+54 299 444 9988'}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb7'), 'usuario_id': 5, 'nombre': 'Ana Torres', 'email': 'ana.torres@example.com', 'telefono': '+54 381 123 4567'}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419a'), 'usuario_id': 1, 'nombre': 'María Pérez', 'email': 'maria.perez@example.com', 'telefono': '+54 11 4567 1234'}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419b'), 'usuario_id': 2, 'nombre': 'Juan López', 'email': 'juan.lopez@example.com', 'telefono': '+54 221 334 5566'}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419c'), 'usuario_id': 3, 'nombre': 'Carla Gómez', 'email': 'carla.gomez@example.com', 'telefono': '+54 261 789 2233'}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419d'), 'usuario_id': 4, 'nombre': 'Luis Fernández', 'email': 'luis.fernandez@example.com', 'telefono': '+54 299 444 9988'}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419e'), 'usuario_id': 5, 'nombre': 'Ana Torres', 'email': 'ana.torres@example.com', 'telefono': '+54 381 123 4567'}
 
 🌍 Destinos:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb8'), 'destino_id': 1, 'ciudad': 'Bariloche', 'pais': 'Argentina', 'tipo': 'Montaña', 'precio_promedio': 90000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb9'), 'destino_id': 2, 'ciudad': 'Cancún', 'pais': 'México', 'tipo': 'Playa', 'precio_promedio': 150000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffba'), 'destino_id': 3, 'ciudad': 'Madrid', 'pais': 'España', 'tipo': 'Cultural', 'precio_promedio': 110000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbb'), 'destino_id': 4, 'ciudad': 'Roma', 'pais': 'Italia', 'tipo': 'Histórico', 'precio_promedio': 100000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbc'), 'destino_id': 5, 'ciudad': 'Mendoza', 'pais': 'Argentina', 'tipo': 'Vinos', 'precio_promedio': 80000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419f'), 'destino_id': 1, 'ciudad': 'Bariloche', 'pais': 'Argentina', 'tipo': 'Montaña', 'precio_promedio': 90000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a0'), 'destino_id': 2, 'ciudad': 'Cancún', 'pais': 'México', 'tipo': 'Playa', 'precio_promedio': 150000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a1'), 'destino_id': 3, 'ciudad': 'Madrid', 'pais': 'España', 'tipo': 'Cultural', 'precio_promedio': 110000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a2'), 'destino_id': 4, 'ciudad': 'Roma', 'pais': 'Italia', 'tipo': 'Histórico', 'precio_promedio': 100000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a3'), 'destino_id': 5, 'ciudad': 'Mendoza', 'pais': 'Argentina', 'tipo': 'Vinos', 'precio_promedio': 80000}
 
 🏨 Hoteles:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbd'), 'hotel_id': 1, 'nombre': 'Hotel Sol', 'ciudad': 'Bariloche', 'precio': 85000, 'calificacion': 4, 'servicios': ['wifi', 'pileta', 'desayuno']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbe'), 'hotel_id': 2, 'nombre': 'Cumbres Andinas', 'ciudad': 'Bariloche', 'precio': 120000, 'calificacion': 5, 'servicios': ['wifi', 'spa', 'pileta']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbf'), 'hotel_id': 3, 'nombre': 'Altos del Norte', 'ciudad': 'Jujuy', 'precio': 60000, 'calificacion': 3, 'servicios': ['wifi']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc0'), 'hotel_id': 4, 'nombre': 'Montaña Real', 'ciudad': 'Mendoza', 'precio': 95000, 'calificacion': 4, 'servicios': ['wifi', 'pileta']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc1'), 'hotel_id': 5, 'nombre': 'Playa Paraíso', 'ciudad': 'Cancún', 'precio': 150000, 'calificacion': 5, 'servicios': ['wifi', 'pileta', 'bar', 'all-inclusive']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc2'), 'hotel_id': 6, 'nombre': 'Gran Europa', 'ciudad': 'Madrid', 'precio': 110000, 'calificacion': 4, 'servicios': ['wifi', 'desayuno', 'gimnasio']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc3'), 'hotel_id': 7, 'nombre': 'Coliseo Suites', 'ciudad': 'Roma', 'precio': 100000, 'calificacion': 4, 'servicios': ['wifi', 'desayuno', 'terraza']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a4'), 'hotel_id': 1, 'nombre': 'Hotel Sol', 'ciudad': 'Bariloche', 'precio': 85000, 'calificacion': 4, 'servicios': ['wifi', 'pileta', 'desayuno']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a5'), 'hotel_id': 2, 'nombre': 'Cumbres Andinas', 'ciudad': 'Bariloche', 'precio': 120000, 'calificacion': 5, 'servicios': ['wifi', 'spa', 'pileta']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a6'), 'hotel_id': 3, 'nombre': 'Altos del Norte', 'ciudad': 'Jujuy', 'precio': 60000, 'calificacion': 3, 'servicios': ['wifi']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a7'), 'hotel_id': 4, 'nombre': 'Montaña Real', 'ciudad': 'Mendoza', 'precio': 95000, 'calificacion': 4, 'servicios': ['wifi', 'pileta']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a8'), 'hotel_id': 5, 'nombre': 'Playa Paraíso', 'ciudad': 'Cancún', 'precio': 150000, 'calificacion': 5, 'servicios': ['wifi', 'pileta', 'bar', 'all-inclusive']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a9'), 'hotel_id': 6, 'nombre': 'Gran Europa', 'ciudad': 'Madrid', 'precio': 110000, 'calificacion': 4, 'servicios': ['wifi', 'desayuno', 'gimnasio']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41aa'), 'hotel_id': 7, 'nombre': 'Coliseo Suites', 'ciudad': 'Roma', 'precio': 100000, 'calificacion': 4, 'servicios': ['wifi', 'desayuno', 'terraza']}
 
 🎯 Actividades:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc4'), 'actividad_id': 1, 'nombre': 'Caminata en glaciares', 'tipo': 'aventura', 'ciudad': 'Bariloche', 'precio': 45000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc5'), 'actividad_id': 2, 'nombre': 'Degustación de vinos', 'tipo': 'cultura', 'ciudad': 'Mendoza', 'precio': 30000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc6'), 'actividad_id': 3, 'nombre': 'Tour por cerros', 'tipo': 'aventura', 'ciudad': 'Jujuy', 'precio': 25000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc7'), 'actividad_id': 4, 'nombre': 'Recorrido histórico', 'tipo': 'cultura', 'ciudad': 'Córdoba', 'precio': 20000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc8'), 'actividad_id': 5, 'nombre': 'Excursión en 4x4', 'tipo': 'aventura', 'ciudad': 'Salta', 'precio': 55000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41ab'), 'actividad_id': 1, 'nombre': 'Caminata en glaciares', 'tipo': 'aventura', 'ciudad': 'Bariloche', 'precio': 45000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41ac'), 'actividad_id': 2, 'nombre': 'Degustación de vinos', 'tipo': 'cultura', 'ciudad': 'Mendoza', 'precio': 30000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41ad'), 'actividad_id': 3, 'nombre': 'Tour por cerros', 'tipo': 'aventura', 'ciudad': 'Jujuy', 'precio': 25000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41ae'), 'actividad_id': 4, 'nombre': 'Recorrido histórico', 'tipo': 'cultura', 'ciudad': 'Córdoba', 'precio': 20000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41af'), 'actividad_id': 5, 'nombre': 'Excursión en 4x4', 'tipo': 'aventura', 'ciudad': 'Salta', 'precio': 55000}
 
 📅 Reservas:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc9'), 'reserva_id': 1, 'usuario_id': 1, 'destino_id': 2, 'fecha_reserva': '2025-07-01', 'estado': 'Confirmada', 'precio_total': 150000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffca'), 'reserva_id': 2, 'usuario_id': 2, 'destino_id': 1, 'fecha_reserva': '2025-06-15', 'estado': 'Pagada', 'precio_total': 90000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffcb'), 'reserva_id': 3, 'usuario_id': 3, 'destino_id': 3, 'fecha_reserva': '2025-05-20', 'estado': 'Cancelada', 'precio_total': 110000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffcc'), 'reserva_id': 4, 'usuario_id': 1, 'destino_id': 4, 'fecha_reserva': '2025-07-10', 'estado': 'Pendiente', 'precio_total': 100000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffcd'), 'reserva_id': 5, 'usuario_id': 5, 'destino_id': 5, 'fecha_reserva': '2025-06-25', 'estado': 'Confirmada', 'precio_total': 80000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41b0'), 'reserva_id': 1, 'usuario_id': 1, 'destino_id': 2, 'fecha_reserva': '2025-07-01', 'estado': 'Confirmada', 'precio_total': 150000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41b1'), 'reserva_id': 2, 'usuario_id': 2, 'destino_id': 1, 'fecha_reserva': '2025-06-15', 'estado': 'Pagada', 'precio_total': 90000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41b2'), 'reserva_id': 3, 'usuario_id': 3, 'destino_id': 3, 'fecha_reserva': '2025-05-20', 'estado': 'Cancelada', 'precio_total': 110000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41b3'), 'reserva_id': 4, 'usuario_id': 1, 'destino_id': 4, 'fecha_reserva': '2025-07-10', 'estado': 'Pendiente', 'precio_total': 100000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41b4'), 'reserva_id': 5, 'usuario_id': 5, 'destino_id': 5, 'fecha_reserva': '2025-06-25', 'estado': 'Confirmada', 'precio_total': 80000}
 </pre>
 </div>
 </div>
@@ -7937,25 +7937,26 @@ El objetivo de este trabajo es diseñar un modelo de distintos tipos de bases de
 <div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">funciones_neo4j</span><span class="w"> </span><span class="kn">import</span> <span class="n">insertar_varios_nodos</span><span class="p">,</span> <span class="n">insertar_varias_relaciones</span><span class="p">,</span> <span class="n">mostrar_relaciones</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_comunes</span><span class="w"> </span><span class="kn">import</span> <span class="n">cargar_csv</span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">funciones_neo4j</span><span class="w"> </span><span class="kn">import</span> <span class="n">insertar_varios_nodos</span><span class="p">,</span> <span class="n">insertar_varias_relaciones</span><span class="p">,</span> <span class="n">mostrar_relaciones</span><span class="p">,</span> <span class="n">limpiar_base</span><span class="p">,</span> <span class="n">cerrar_conexion</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">funciones_comunes</span><span class="w"> </span><span class="kn">import</span> <span class="n">cargar_csv</span>
 
-<span class="c1"># === NODOS ===</span>
-<span class="n">usuarios</span> <span class="o">=</span> <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">usuarios</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
-<span class="n">usuarios_formateados</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">"usuario_id"</span><span class="p">:</span> <span class="n">u</span><span class="p">[</span><span class="s2">"usuario_id"</span><span class="p">],</span> <span class="s2">"nombre"</span><span class="p">:</span> <span class="n">u</span><span class="p">[</span><span class="s2">"nombre"</span><span class="p">],</span> <span class="s2">"email"</span><span class="p">:</span> <span class="n">u</span><span class="p">[</span><span class="s2">"email"</span><span class="p">],</span> <span class="s2">"telefono"</span><span class="p">:</span> <span class="n">u</span><span class="p">[</span><span class="s2">"telefono"</span><span class="p">]}</span>
-    <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">usuarios</span>
-<span class="p">]</span>
+
+
+<span class="c1"># --- LIMPIAR BASE (solo en entorno de pruebas)</span>
+<span class="c1"># limpiar_base()  # borrar los datos previos</span>
+
+<span class="c1"># ---  CARGA DE NODOS</span>
+<span class="n">usuarios</span> <span class="o">=</span> <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">usuarios</span><span class="o">.</span><span class="n">find</span><span class="p">({},</span> <span class="p">{</span><span class="s2">"usuario_id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"_id"</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+<span class="n">usuarios_formateados</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">"usuario_id"</span><span class="p">:</span> <span class="n">u</span><span class="p">[</span><span class="s2">"usuario_id"</span><span class="p">]}</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">usuarios</span><span class="p">]</span>
 <span class="n">insertar_varios_nodos</span><span class="p">(</span><span class="s2">"Usuario"</span><span class="p">,</span> <span class="n">usuarios_formateados</span><span class="p">)</span>
 
-<span class="n">destinos</span> <span class="o">=</span> <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">destinos</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
-<span class="n">destinos_formateados</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">"destino_id"</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">"destino_id"</span><span class="p">],</span> <span class="s2">"ciudad"</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">"ciudad"</span><span class="p">],</span> <span class="s2">"pais"</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">"pais"</span><span class="p">],</span> <span class="s2">"tipo"</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">"tipo"</span><span class="p">],</span> <span class="s2">"precio_promedio"</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">"precio_promedio"</span><span class="p">]}</span>
-    <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">destinos</span>
-<span class="p">]</span>
+<span class="n">destinos</span> <span class="o">=</span> <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">destinos</span><span class="o">.</span><span class="n">find</span><span class="p">({},</span> <span class="p">{</span><span class="s2">"destino_id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"_id"</span><span class="p">:</span> <span class="mi">0</span><span class="p">})</span>
+<span class="n">destinos_formateados</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">"destino_id"</span><span class="p">:</span> <span class="n">d</span><span class="p">[</span><span class="s2">"destino_id"</span><span class="p">]}</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">destinos</span><span class="p">]</span>
 <span class="n">insertar_varios_nodos</span><span class="p">(</span><span class="s2">"Destino"</span><span class="p">,</span> <span class="n">destinos_formateados</span><span class="p">)</span>
 
-<span class="c1"># === RELACIONES ===</span>
+
+<span class="c1"># --- CARGA DE RELACIONES</span>
+
 <span class="n">relaciones_sociales</span> <span class="o">=</span> <span class="n">cargar_csv</span><span class="p">(</span><span class="s2">"relaciones_sociales.csv"</span><span class="p">)</span>
 <span class="n">rel_social_formateadas</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -7965,9 +7966,9 @@ El objetivo de este trabajo es diseñar un modelo de distintos tipos de bases de
         <span class="s2">"label_destino"</span><span class="p">:</span> <span class="s2">"Usuario"</span><span class="p">,</span>
         <span class="s2">"prop_destino"</span><span class="p">:</span> <span class="s2">"usuario_id"</span><span class="p">,</span>
         <span class="s2">"valor_destino"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="s2">"usuario2_id"</span><span class="p">]),</span>
-        <span class="s2">"tipo"</span><span class="p">:</span> <span class="n">r</span><span class="p">[</span><span class="s2">"tipo"</span><span class="p">]</span>
+        <span class="s2">"tipo"</span><span class="p">:</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"tipo"</span><span class="p">,</span> <span class="s2">"CONECTA"</span><span class="p">)</span>  <span class="c1"># Default si no hay tipo</span>
     <span class="p">}</span>
-    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">relaciones_sociales</span>
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">relaciones_sociales</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"usuario1_id"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"usuario2_id"</span><span class="p">)</span>
 <span class="p">]</span>
 
 <span class="n">visitas</span> <span class="o">=</span> <span class="n">cargar_csv</span><span class="p">(</span><span class="s2">"visitas.csv"</span><span class="p">)</span>
@@ -7981,15 +7982,19 @@ El objetivo de este trabajo es diseñar un modelo de distintos tipos de bases de
         <span class="s2">"valor_destino"</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="s2">"destino_id"</span><span class="p">]),</span>
         <span class="s2">"tipo"</span><span class="p">:</span> <span class="s2">"VISITO"</span>
     <span class="p">}</span>
-    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">visitas</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">visitas</span> <span class="k">if</span> <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"usuario_id"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">v</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"destino_id"</span><span class="p">)</span>
 <span class="p">]</span>
 
-<span class="c1"># === INSERTAR RELACIONES ===</span>
+<span class="c1"># --- INSERTAR RELACIONES</span>
+
 <span class="n">insertar_varias_relaciones</span><span class="p">(</span><span class="n">rel_social_formateadas</span><span class="p">)</span>
 <span class="n">insertar_varias_relaciones</span><span class="p">(</span><span class="n">rel_visitas_formateadas</span><span class="p">)</span>
 
-<span class="c1"># === MOSTRAR RELACIONES ===</span>
+<span class="c1"># --- VERIFICAR RELACIONES</span>
 <span class="n">mostrar_relaciones</span><span class="p">()</span>
+
+<span class="c1"># CERRAR CONEXIÓN</span>
+<span class="c1"># --- cerrar_conexion()</span>
 </pre></div>
 </div>
 </div>
@@ -8002,8 +8007,10 @@ El objetivo de este trabajo es diseñar un modelo de distintos tipos de bases de
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>✅ Se insertaron 5 nodos en 'Usuario'.
-✅ Se insertaron 5 nodos en 'Destino'.
+<pre>🧩 Constraint de unicidad asegurado: (Usuario.usuario_id)
+✅ Se insertaron 5 nodos en 'Usuario' (solo IDs).
+🧩 Constraint de unicidad asegurado: (Destino.destino_id)
+✅ Se insertaron 5 nodos en 'Destino' (solo IDs).
 ✅ Se insertaron 3 relaciones.
 ✅ Se insertaron 7 relaciones.
 
@@ -8326,41 +8333,41 @@ j. Relaciones entre usuarios (ej: AMIGO_DE, FAMILIAR_DE).</p>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>
 🧍 Usuarios:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb3'), 'usuario_id': 1, 'nombre': 'María Pérez', 'email': 'maria.perez@example.com', 'telefono': '+54 11 4567 1234'}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb4'), 'usuario_id': 2, 'nombre': 'Juan López', 'email': 'juan.lopez@example.com', 'telefono': '+54 221 334 5566'}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb5'), 'usuario_id': 3, 'nombre': 'Carla Gómez', 'email': 'carla.gomez@example.com', 'telefono': '+54 261 789 2233'}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb6'), 'usuario_id': 4, 'nombre': 'Luis Fernández', 'email': 'luis.fernandez@example.com', 'telefono': '+54 299 444 9988'}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb7'), 'usuario_id': 5, 'nombre': 'Ana Torres', 'email': 'ana.torres@example.com', 'telefono': '+54 381 123 4567'}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419a'), 'usuario_id': 1, 'nombre': 'María Pérez', 'email': 'maria.perez@example.com', 'telefono': '+54 11 4567 1234'}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419b'), 'usuario_id': 2, 'nombre': 'Juan López', 'email': 'juan.lopez@example.com', 'telefono': '+54 221 334 5566'}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419c'), 'usuario_id': 3, 'nombre': 'Carla Gómez', 'email': 'carla.gomez@example.com', 'telefono': '+54 261 789 2233'}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419d'), 'usuario_id': 4, 'nombre': 'Luis Fernández', 'email': 'luis.fernandez@example.com', 'telefono': '+54 299 444 9988'}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419e'), 'usuario_id': 5, 'nombre': 'Ana Torres', 'email': 'ana.torres@example.com', 'telefono': '+54 381 123 4567'}
 
 🌍 Destinos:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb8'), 'destino_id': 1, 'ciudad': 'Bariloche', 'pais': 'Argentina', 'tipo': 'Montaña', 'precio_promedio': 90000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffb9'), 'destino_id': 2, 'ciudad': 'Cancún', 'pais': 'México', 'tipo': 'Playa', 'precio_promedio': 150000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffba'), 'destino_id': 3, 'ciudad': 'Madrid', 'pais': 'España', 'tipo': 'Cultural', 'precio_promedio': 110000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbb'), 'destino_id': 4, 'ciudad': 'Roma', 'pais': 'Italia', 'tipo': 'Histórico', 'precio_promedio': 100000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbc'), 'destino_id': 5, 'ciudad': 'Mendoza', 'pais': 'Argentina', 'tipo': 'Vinos', 'precio_promedio': 80000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a419f'), 'destino_id': 1, 'ciudad': 'Bariloche', 'pais': 'Argentina', 'tipo': 'Montaña', 'precio_promedio': 90000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a0'), 'destino_id': 2, 'ciudad': 'Cancún', 'pais': 'México', 'tipo': 'Playa', 'precio_promedio': 150000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a1'), 'destino_id': 3, 'ciudad': 'Madrid', 'pais': 'España', 'tipo': 'Cultural', 'precio_promedio': 110000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a2'), 'destino_id': 4, 'ciudad': 'Roma', 'pais': 'Italia', 'tipo': 'Histórico', 'precio_promedio': 100000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a3'), 'destino_id': 5, 'ciudad': 'Mendoza', 'pais': 'Argentina', 'tipo': 'Vinos', 'precio_promedio': 80000}
 
 🏨 Hoteles:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbd'), 'hotel_id': 1, 'nombre': 'Hotel Sol', 'ciudad': 'Bariloche', 'precio': 85000, 'calificacion': 4, 'servicios': ['wifi', 'pileta', 'desayuno']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbe'), 'hotel_id': 2, 'nombre': 'Cumbres Andinas', 'ciudad': 'Bariloche', 'precio': 120000, 'calificacion': 5, 'servicios': ['wifi', 'spa', 'pileta']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbf'), 'hotel_id': 3, 'nombre': 'Altos del Norte', 'ciudad': 'Jujuy', 'precio': 60000, 'calificacion': 3, 'servicios': ['wifi']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc0'), 'hotel_id': 4, 'nombre': 'Montaña Real', 'ciudad': 'Mendoza', 'precio': 95000, 'calificacion': 4, 'servicios': ['wifi', 'pileta']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc1'), 'hotel_id': 5, 'nombre': 'Playa Paraíso', 'ciudad': 'Cancún', 'precio': 150000, 'calificacion': 5, 'servicios': ['wifi', 'pileta', 'bar', 'all-inclusive']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc2'), 'hotel_id': 6, 'nombre': 'Gran Europa', 'ciudad': 'Madrid', 'precio': 110000, 'calificacion': 4, 'servicios': ['wifi', 'desayuno', 'gimnasio']}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc3'), 'hotel_id': 7, 'nombre': 'Coliseo Suites', 'ciudad': 'Roma', 'precio': 100000, 'calificacion': 4, 'servicios': ['wifi', 'desayuno', 'terraza']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a4'), 'hotel_id': 1, 'nombre': 'Hotel Sol', 'ciudad': 'Bariloche', 'precio': 85000, 'calificacion': 4, 'servicios': ['wifi', 'pileta', 'desayuno']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a5'), 'hotel_id': 2, 'nombre': 'Cumbres Andinas', 'ciudad': 'Bariloche', 'precio': 120000, 'calificacion': 5, 'servicios': ['wifi', 'spa', 'pileta']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a6'), 'hotel_id': 3, 'nombre': 'Altos del Norte', 'ciudad': 'Jujuy', 'precio': 60000, 'calificacion': 3, 'servicios': ['wifi']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a7'), 'hotel_id': 4, 'nombre': 'Montaña Real', 'ciudad': 'Mendoza', 'precio': 95000, 'calificacion': 4, 'servicios': ['wifi', 'pileta']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a8'), 'hotel_id': 5, 'nombre': 'Playa Paraíso', 'ciudad': 'Cancún', 'precio': 150000, 'calificacion': 5, 'servicios': ['wifi', 'pileta', 'bar', 'all-inclusive']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a9'), 'hotel_id': 6, 'nombre': 'Gran Europa', 'ciudad': 'Madrid', 'precio': 110000, 'calificacion': 4, 'servicios': ['wifi', 'desayuno', 'gimnasio']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41aa'), 'hotel_id': 7, 'nombre': 'Coliseo Suites', 'ciudad': 'Roma', 'precio': 100000, 'calificacion': 4, 'servicios': ['wifi', 'desayuno', 'terraza']}
 
 🎯 Actividades:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc4'), 'actividad_id': 1, 'nombre': 'Caminata en glaciares', 'tipo': 'aventura', 'ciudad': 'Bariloche', 'precio': 45000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc5'), 'actividad_id': 2, 'nombre': 'Degustación de vinos', 'tipo': 'cultura', 'ciudad': 'Mendoza', 'precio': 30000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc6'), 'actividad_id': 3, 'nombre': 'Tour por cerros', 'tipo': 'aventura', 'ciudad': 'Jujuy', 'precio': 25000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc7'), 'actividad_id': 4, 'nombre': 'Recorrido histórico', 'tipo': 'cultura', 'ciudad': 'Córdoba', 'precio': 20000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc8'), 'actividad_id': 5, 'nombre': 'Excursión en 4x4', 'tipo': 'aventura', 'ciudad': 'Salta', 'precio': 55000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41ab'), 'actividad_id': 1, 'nombre': 'Caminata en glaciares', 'tipo': 'aventura', 'ciudad': 'Bariloche', 'precio': 45000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41ac'), 'actividad_id': 2, 'nombre': 'Degustación de vinos', 'tipo': 'cultura', 'ciudad': 'Mendoza', 'precio': 30000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41ad'), 'actividad_id': 3, 'nombre': 'Tour por cerros', 'tipo': 'aventura', 'ciudad': 'Jujuy', 'precio': 25000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41ae'), 'actividad_id': 4, 'nombre': 'Recorrido histórico', 'tipo': 'cultura', 'ciudad': 'Córdoba', 'precio': 20000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41af'), 'actividad_id': 5, 'nombre': 'Excursión en 4x4', 'tipo': 'aventura', 'ciudad': 'Salta', 'precio': 55000}
 
 📅 Reservas:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffc9'), 'reserva_id': 1, 'usuario_id': 1, 'destino_id': 2, 'fecha_reserva': '2025-07-01', 'estado': 'Confirmada', 'precio_total': 150000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffca'), 'reserva_id': 2, 'usuario_id': 2, 'destino_id': 1, 'fecha_reserva': '2025-06-15', 'estado': 'Pagada', 'precio_total': 90000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffcb'), 'reserva_id': 3, 'usuario_id': 3, 'destino_id': 3, 'fecha_reserva': '2025-05-20', 'estado': 'Cancelada', 'precio_total': 110000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffcc'), 'reserva_id': 4, 'usuario_id': 1, 'destino_id': 4, 'fecha_reserva': '2025-07-10', 'estado': 'Pendiente', 'precio_total': 100000}
-{'_id': ObjectId('69018f4dd8c43bbd7838ffcd'), 'reserva_id': 5, 'usuario_id': 5, 'destino_id': 5, 'fecha_reserva': '2025-06-25', 'estado': 'Confirmada', 'precio_total': 80000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41b0'), 'reserva_id': 1, 'usuario_id': 1, 'destino_id': 2, 'fecha_reserva': '2025-07-01', 'estado': 'Confirmada', 'precio_total': 150000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41b1'), 'reserva_id': 2, 'usuario_id': 2, 'destino_id': 1, 'fecha_reserva': '2025-06-15', 'estado': 'Pagada', 'precio_total': 90000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41b2'), 'reserva_id': 3, 'usuario_id': 3, 'destino_id': 3, 'fecha_reserva': '2025-05-20', 'estado': 'Cancelada', 'precio_total': 110000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41b3'), 'reserva_id': 4, 'usuario_id': 1, 'destino_id': 4, 'fecha_reserva': '2025-07-10', 'estado': 'Pendiente', 'precio_total': 100000}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41b4'), 'reserva_id': 5, 'usuario_id': 5, 'destino_id': 5, 'fecha_reserva': '2025-06-25', 'estado': 'Confirmada', 'precio_total': 80000}
 </pre>
 </div>
 </div>
@@ -8483,21 +8490,21 @@ j. Relaciones entre usuarios (ej: AMIGO_DE, FAMILIAR_DE).</p>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'_id': ObjectId('69018f4dd8c43bbd7838ffca'),
+<pre>[{'_id': ObjectId('690b3d02d0dff8a5ca4a41b1'),
   'reserva_id': 2,
   'usuario_id': 2,
   'destino_id': 1,
   'fecha_reserva': '2025-06-15',
   'estado': 'Pagada',
   'precio_total': 90000},
- {'_id': ObjectId('69018f4dd8c43bbd7838ffcb'),
+ {'_id': ObjectId('690b3d02d0dff8a5ca4a41b2'),
   'reserva_id': 3,
   'usuario_id': 3,
   'destino_id': 3,
   'fecha_reserva': '2025-05-20',
   'estado': 'Cancelada',
   'precio_total': 110000},
- {'_id': ObjectId('69018f4dd8c43bbd7838ffcc'),
+ {'_id': ObjectId('690b3d02d0dff8a5ca4a41b3'),
   'reserva_id': 4,
   'usuario_id': 1,
   'destino_id': 4,
@@ -8659,7 +8666,7 @@ Agregar gráficos generados con python. Se adjunta código de ejemplo para gener
 <span class="n">usuario_objetivo</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># cambia si hace falta</span>
 <span class="n">query</span> <span class="o">=</span> <span class="s2">"""</span>
 <span class="s2">MATCH (juan:Usuario {usuario_id: $uid})-[:VISITO]-&gt;(d:Destino)</span>
-<span class="s2">MATCH (juan)-[:AMIGO_DE|:FAMILIAR_DE]-(amigo:Usuario)</span>
+<span class="s2">MATCH (juan)-[:AMIGO_DE|FAMILIAR_DE]-(amigo:Usuario)</span>
 <span class="s2">MATCH (amigo)-[:VISITO]-&gt;(d)</span>
 <span class="s2">RETURN DISTINCT amigo.usuario_id AS usuario_id, amigo.nombre AS nombre, d.ciudad AS destino</span>
 <span class="s2">ORDER BY amigo.usuario_id, destino</span>
@@ -8677,13 +8684,6 @@ Agregar gráficos generados con python. Se adjunta código de ejemplo para gener
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Received notification from DBMS server: &lt;GqlStatusObject gql_status='01N01', status_description="warn: feature deprecated with replacement. ':AMIGO_DE|:FAMILIAR_DE' is deprecated. It is replaced by ':AMIGO_DE|FAMILIAR_DE'.", position=&lt;SummaryInputPosition line=3, column=24, offset=87&gt;, raw_classification='DEPRECATION', classification=&lt;NotificationClassification.DEPRECATION: 'DEPRECATION'&gt;, raw_severity='WARNING', severity=&lt;NotificationSeverity.WARNING: 'WARNING'&gt;, diagnostic_record={'_classification': 'DEPRECATION', '_severity': 'WARNING', '_position': {'offset': 87, 'line': 3, 'column': 24}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}&gt; for query: '\nMATCH (juan:Usuario {usuario_id: $uid})-[:VISITO]-&gt;(d:Destino)\nMATCH (juan)-[:AMIGO_DE|:FAMILIAR_DE]-(amigo:Usuario)\nMATCH (amigo)-[:VISITO]-&gt;(d)\nRETURN DISTINCT amigo.usuario_id AS usuario_id, amigo.nombre AS nombre, d.ciudad AS destino\nORDER BY amigo.usuario_id, destino\n'
-</pre>
-</div>
-</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
@@ -8720,7 +8720,7 @@ Agregar gráficos generados con python. Se adjunta código de ejemplo para gener
 <span class="s2">  MATCH (:Usuario {usuario_id: $uid})-[:VISITO]-&gt;(d)</span>
 <span class="s2">}</span>
 <span class="s2">AND NOT EXISTS {</span>
-<span class="s2">  MATCH (:Usuario {usuario_id: $uid})-[:AMIGO_DE|:FAMILIAR_DE]-(f:Usuario)-[:VISITO]-&gt;(d)</span>
+<span class="s2">  MATCH (:Usuario {usuario_id: $uid})-[:AMIGO_DE|FAMILIAR_DE]-(f:Usuario)-[:VISITO]-&gt;(d)</span>
 <span class="s2">}</span>
 <span class="s2">RETURN d.destino_id AS destino_id, d.ciudad AS ciudad</span>
 <span class="s2">ORDER BY d.ciudad</span>
@@ -8738,13 +8738,6 @@ Agregar gráficos generados con python. Se adjunta código de ejemplo para gener
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Received notification from DBMS server: &lt;GqlStatusObject gql_status='01N01', status_description="warn: feature deprecated with replacement. ':AMIGO_DE|:FAMILIAR_DE' is deprecated. It is replaced by ':AMIGO_DE|FAMILIAR_DE'.", position=&lt;SummaryInputPosition line=7, column=49, offset=158&gt;, raw_classification='DEPRECATION', classification=&lt;NotificationClassification.DEPRECATION: 'DEPRECATION'&gt;, raw_severity='WARNING', severity=&lt;NotificationSeverity.WARNING: 'WARNING'&gt;, diagnostic_record={'_classification': 'DEPRECATION', '_severity': 'WARNING', '_position': {'offset': 158, 'line': 7, 'column': 49}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}&gt; for query: '\nMATCH (d:Destino)\nWHERE NOT EXISTS {\n  MATCH (:Usuario {usuario_id: $uid})-[:VISITO]-&gt;(d)\n}\nAND NOT EXISTS {\n  MATCH (:Usuario {usuario_id: $uid})-[:AMIGO_DE|:FAMILIAR_DE]-(f:Usuario)-[:VISITO]-&gt;(d)\n}\nRETURN d.destino_id AS destino_id, d.ciudad AS ciudad\nORDER BY d.ciudad\n'
-</pre>
-</div>
-</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
@@ -8778,7 +8771,7 @@ Agregar gráficos generados con python. Se adjunta código de ejemplo para gener
 <span class="n">usuario_objetivo</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">top_n</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">query</span> <span class="o">=</span> <span class="s2">"""</span>
-<span class="s2">MATCH (:Usuario {usuario_id: $uid})-[:AMIGO_DE|:FAMILIAR_DE]-(f:Usuario)-[:VISITO]-&gt;(d:Destino)</span>
+<span class="s2">MATCH (:Usuario {usuario_id: $uid})-[:AMIGO_DE|FAMILIAR_DE]-(f:Usuario)-[:VISITO]-&gt;(d:Destino)</span>
 <span class="s2">WHERE NOT EXISTS((:Usuario {usuario_id: $uid})-[:VISITO]-&gt;(d))</span>
 <span class="s2">RETURN d.ciudad AS ciudad, d.destino_id AS destino_id, count(*) AS visitas_amigos</span>
 <span class="s2">ORDER BY visitas_amigos DESC</span>
@@ -8797,13 +8790,6 @@ Agregar gráficos generados con python. Se adjunta código de ejemplo para gener
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>Received notification from DBMS server: &lt;GqlStatusObject gql_status='01N01', status_description="warn: feature deprecated with replacement. ':AMIGO_DE|:FAMILIAR_DE' is deprecated. It is replaced by ':AMIGO_DE|FAMILIAR_DE'.", position=&lt;SummaryInputPosition line=2, column=47, offset=47&gt;, raw_classification='DEPRECATION', classification=&lt;NotificationClassification.DEPRECATION: 'DEPRECATION'&gt;, raw_severity='WARNING', severity=&lt;NotificationSeverity.WARNING: 'WARNING'&gt;, diagnostic_record={'_classification': 'DEPRECATION', '_severity': 'WARNING', '_position': {'offset': 47, 'line': 2, 'column': 47}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}&gt; for query: '\nMATCH (:Usuario {usuario_id: $uid})-[:AMIGO_DE|:FAMILIAR_DE]-(f:Usuario)-[:VISITO]-&gt;(d:Destino)\nWHERE NOT EXISTS((:Usuario {usuario_id: $uid})-[:VISITO]-&gt;(d))\nRETURN d.ciudad AS ciudad, d.destino_id AS destino_id, count(*) AS visitas_amigos\nORDER BY visitas_amigos DESC\nLIMIT $n\n'
-</pre>
-</div>
-</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
@@ -8925,21 +8911,21 @@ Agregar gráficos generados con python. Se adjunta código de ejemplo para gener
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'_id': ObjectId('69018f4dd8c43bbd7838ffca'),
+<pre>[{'_id': ObjectId('690b3d02d0dff8a5ca4a41b1'),
   'reserva_id': 2,
   'usuario_id': 2,
   'destino_id': 1,
   'fecha_reserva': '2025-06-15',
   'estado': 'Pagada',
   'precio_total': 90000},
- {'_id': ObjectId('69018f4dd8c43bbd7838ffcb'),
+ {'_id': ObjectId('690b3d02d0dff8a5ca4a41b2'),
   'reserva_id': 3,
   'usuario_id': 3,
   'destino_id': 3,
   'fecha_reserva': '2025-05-20',
   'estado': 'Cancelada',
   'precio_total': 110000},
- {'_id': ObjectId('69018f4dd8c43bbd7838ffcc'),
+ {'_id': ObjectId('690b3d02d0dff8a5ca4a41b3'),
   'reserva_id': 4,
   'usuario_id': 1,
   'destino_id': 4,
@@ -9036,13 +9022,13 @@ Agregar gráficos generados con python. Se adjunta código de ejemplo para gener
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'_id': ObjectId('69018f4dd8c43bbd7838ffb8'),
+<pre>[{'_id': ObjectId('690b3d02d0dff8a5ca4a419f'),
   'destino_id': 1,
   'ciudad': 'Bariloche',
   'pais': 'Argentina',
   'tipo': 'Montaña',
   'precio_promedio': 90000},
- {'_id': ObjectId('69018f4dd8c43bbd7838ffbc'),
+ {'_id': ObjectId('690b3d02d0dff8a5ca4a41a3'),
   'destino_id': 5,
   'ciudad': 'Mendoza',
   'pais': 'Argentina',
@@ -9086,7 +9072,7 @@ Agregar gráficos generados con python. Se adjunta código de ejemplo para gener
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'_id': ObjectId('69018f4dd8c43bbd7838ffbf'),
+<pre>[{'_id': ObjectId('690b3d02d0dff8a5ca4a41a6'),
   'hotel_id': 3,
   'nombre': 'Altos del Norte',
   'ciudad': 'Jujuy',
@@ -9313,7 +9299,7 @@ Ciudad: Roma            | Hoteles: 1
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'_id': ObjectId('69018f9ed8c43bbd7838ffce'),
+<pre>[{'_id': ObjectId('690b3d0cd0dff8a5ca4a41b5'),
   'actividad_id': 6,
   'nombre': 'Trekking en glaciares fueguinos',
   'tipo': 'aventura',
@@ -9367,8 +9353,8 @@ Ciudad: Roma            | Hoteles: 1
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>[{'_id': 1, 'cantidad': 1, 'nombre': 'María Pérez'},
- {'_id': 5, 'cantidad': 1, 'nombre': 'Ana Torres'}]</pre>
+<pre>[{'_id': 5, 'cantidad': 1, 'nombre': 'Ana Torres'},
+ {'_id': 1, 'cantidad': 1, 'nombre': 'María Pérez'}]</pre>
 </div>
 </div>
 </div>
@@ -9518,7 +9504,7 @@ Ciudad: Roma            | Hoteles: 1
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># M.ii - Hotel más barato</span>
@@ -9606,7 +9592,7 @@ Altos del Norte   60000     Jujuy             3
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># M.iii - Buscar actividad en reservas</span>
@@ -9730,7 +9716,7 @@ e. Eliminar las relaciones AMIGO_DE para un usuario que quiera.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Filtrar actividades de Tucumán y actualizar precio</span>
@@ -9773,7 +9759,7 @@ e. Eliminar las relaciones AMIGO_DE para un usuario que quiera.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Actividad a insertar en Tucumán</span>
@@ -9812,7 +9798,7 @@ e. Eliminar las relaciones AMIGO_DE para un usuario que quiera.</p>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Se actualizaron 1 actividades.
 Actividad insertada en Tucumán:
-{'_id': ObjectId('69018fbcd8c43bbd7838ffcf'), 'actividad_id': 7, 'nombre': 'Excursión al Cerro San Javier', 'tipo': 'aventura', 'ciudad': 'Tucumán', 'precio': 42000.0}
+{'_id': ObjectId('690b3d12d0dff8a5ca4a41b6'), 'actividad_id': 7, 'nombre': 'Excursión al Cerro San Javier', 'tipo': 'aventura', 'ciudad': 'Tucumán', 'precio': 42000.0}
 </pre>
 </div>
 </div>
@@ -9834,7 +9820,7 @@ Actividad insertada en Tucumán:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">hotel_modificado</span> <span class="o">=</span> <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">hoteles</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s2">"hotel_id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
@@ -9853,7 +9839,7 @@ Actividad insertada en Tucumán:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Hotel antes de ser modificado:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbd'), 'hotel_id': 1, 'nombre': 'Hotel Sol', 'ciudad': 'Bariloche', 'precio': 85000, 'calificacion': 4, 'servicios': ['wifi', 'pileta', 'desayuno']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a4'), 'hotel_id': 1, 'nombre': 'Hotel Sol', 'ciudad': 'Bariloche', 'precio': 85000, 'calificacion': 4, 'servicios': ['wifi', 'pileta', 'desayuno']}
 </pre>
 </div>
 </div>
@@ -9864,7 +9850,7 @@ Actividad insertada en Tucumán:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">hoteles</span><span class="o">.</span><span class="n">update_one</span><span class="p">(</span>
@@ -9895,7 +9881,7 @@ Actividad insertada en Tucumán:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">hotel_modificado</span> <span class="o">=</span> <span class="n">funciones_mongo</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">hoteles</span><span class="o">.</span><span class="n">find_one</span><span class="p">({</span><span class="s2">"hotel_id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
@@ -9914,7 +9900,7 @@ Actividad insertada en Tucumán:
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Hotel Modificado:
-{'_id': ObjectId('69018f4dd8c43bbd7838ffbd'), 'hotel_id': 1, 'nombre': 'Hotel Sol', 'ciudad': 'Bariloche', 'precio': 85000, 'calificacion': 4, 'servicios': ['wifi', 'pileta', 'desayuno', 'spa']}
+{'_id': ObjectId('690b3d02d0dff8a5ca4a41a4'), 'hotel_id': 1, 'nombre': 'Hotel Sol', 'ciudad': 'Bariloche', 'precio': 85000, 'calificacion': 4, 'servicios': ['wifi', 'pileta', 'desayuno', 'spa']}
 </pre>
 </div>
 </div>
@@ -9936,7 +9922,7 @@ Actividad insertada en Tucumán:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Recuperar todos los destinos</span>
@@ -9973,7 +9959,7 @@ ID: 5, Ciudad: Mendoza, País: Argentina, Tipo: Vinos, Precio promedio: 80000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Ejemplo: eliminar destino con destino_id = 3 (Madrid)</span>
@@ -10003,7 +9989,7 @@ ID: 5, Ciudad: Mendoza, País: Argentina, Tipo: Vinos, Precio promedio: 80000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Recuperar todos los destinos</span>
@@ -10050,7 +10036,7 @@ ID: 5, Ciudad: Mendoza, País: Argentina, Tipo: Vinos, Precio promedio: 80000
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Recuperar todos los usuarios</span>
@@ -10088,7 +10074,7 @@ ID: 5, Nombre: Ana Torres, Email: ana.torres@example.com, Teléfono: +54 381 123
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">usuario_a_eliminar</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># el ID del usuario a borrar</span>
@@ -10139,7 +10125,7 @@ Se eliminaron 1 usuario(s) en MongoDB.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [46]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Recuperar todos los usuarios</span>
@@ -10176,7 +10162,7 @@ ID: 5, Nombre: Ana Torres, Email: ana.torres@example.com, Teléfono: +54 381 123
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># funciones_neo4j.py</span>
@@ -10253,7 +10239,7 @@ ID: 5, Nombre: Ana Torres, Email: ana.torres@example.com, Teléfono: +54 381 123
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># from funciones_neo4j import driver</span>
