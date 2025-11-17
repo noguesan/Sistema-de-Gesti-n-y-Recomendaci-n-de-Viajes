@@ -61,6 +61,18 @@ def delete_temp_reservation(reserva_id):
     key = f"temp_reserva:{reserva_id}"
     r.delete(key)
 
+def get_all_temp_reservations():
+    """Devuelve todas las reservas temporales almacenadas en Redis."""
+    keys = r.keys("temp_reserva:*")
+    reservas = []
+
+    for key in keys:
+        data = r.get(key)
+        if data:
+            reservas.append(json.loads(data))
+
+    return reservas
+
 # --- Cache de resultados de consultas (TTL opcional) ---
 def cache_query_result(key, data, ttl_seconds=None):
     """Guarda resultados en cache con TTL opcional."""
